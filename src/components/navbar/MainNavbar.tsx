@@ -36,7 +36,7 @@ export default function MainNavbar() {
         className="flex items-center gap-2 cursor-pointer group"
       >
         <img
-          src="/src/assets/logo/logos.png"
+          src="/public/logo/logos.png"
           alt="Garuda Fiber Logo"
           className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
           style={{ transform: "scale(1.4)", transformOrigin: "left center" }}
