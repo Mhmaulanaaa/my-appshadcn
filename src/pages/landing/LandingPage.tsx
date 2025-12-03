@@ -163,8 +163,8 @@ function HeroCarousel() {
               onClick={() => {
                 // CTA behavior: navigate to dashboard for enterprise slide, contact for third, pricing for first
                 if (index === 1) navigate("/dashboard");
-                else if (index === 2) location.href = "/?page=contact";
-                else location.href = "/?page=pricing";
+                else if (index === 2) location.href = "/#";
+                else location.href = "/#pricing";
               }}
             >
               {slides[index].cta}
@@ -820,6 +820,7 @@ function FAQSection() {
    CTA
    --------------------------------------------------- */
 function CTASection() {
+  const navigate = useNavigate();
   return (
     <section className="relative px-6 py-20 bg-linear-to-br from-blue-500 to-purple-600 dark:from-blue-500   dark: to-purple-600 text-white overflow-hidden">
       {/* Glow Background */}
@@ -855,7 +856,7 @@ function CTASection() {
               <div className="flex gap-4">
                 <Button
                   className="bg-white text-blue-700 hover:bg-white/90 font-semibold flex items-center gap-2"
-                  onClick={() => (location.href = "/?page=contact")}
+                  onClick={() => navigate("/?page=contact")}
                 >
                   Hubungi Sales <ArrowRight size={18} />
                 </Button>
@@ -863,7 +864,7 @@ function CTASection() {
                 <Button
                   variant="outline"
                   className="border-white text-white hover:bg-white/20"
-                  onClick={() => (location.href = "/dashboard")}
+                  onClick={() => navigate("/dashboard")}
                 >
                   Ke Dashboard
                 </Button>
@@ -897,7 +898,10 @@ function ContactSection() {
   }
 
   return (
-    <section className="px-6 py-24 bg-gradient-to-b from-white to-blue-50 dark:from-neutral-900 dark:to-slate-900">
+    <section
+      className="px-6 py-24 bg-gradient-to-b from-white to-blue-50 dark:from-neutral-900 dark:to-slate-900"
+      id="contactsection"
+    >
       <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -958,7 +962,7 @@ function ContactSection() {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 placeholder="Nama lengkap"
-                className="mt-1"
+                className="mt-2"
               />
             </div>
 
@@ -968,7 +972,7 @@ function ContactSection() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="email@mu.co.id"
-                className="mt-1"
+                className="mt-2"
               />
             </div>
 
@@ -978,7 +982,7 @@ function ContactSection() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder="Jelaskan kebutuhan Anda..."
-                className="mt-1 w-full p-3 rounded-md bg-white dark:bg-slate-900 border border-neutral-300 dark:border-neutral-700"
+                className="mt-2 w-full p-3 rounded-md bg-white dark:bg-slate-900 border border-neutral-300 dark:border-neutral-700"
                 rows={5}
               />
             </div>

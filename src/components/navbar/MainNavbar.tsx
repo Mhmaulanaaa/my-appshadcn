@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { Menu, X } from "lucide-react"; // icon hamburger & close
+import { Menu, X } from "lucide-react";
 
 export default function MainNavbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +31,18 @@ export default function MainNavbar() {
       } border-neutral-200 dark:border-neutral-800 px-6 py-4 flex justify-between items-center`}
     >
       {/* LOGO */}
-      <h1 className="text-xl font-bold tracking-tight">Garuda Fiber</h1>
+      <a
+        href="/#dashboard"
+        className="flex items-center gap-2 cursor-pointer group"
+      >
+        <img
+          src="/src/assets/logo/logos.png"
+          alt="Garuda Fiber Logo"
+          className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+          style={{ transform: "scale(1.4)", transformOrigin: "left center" }}
+          // scale memperbesar logo TANPA menaikkan tinggi navbar
+        />
+      </a>
 
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-6">
