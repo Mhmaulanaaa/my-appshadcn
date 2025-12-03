@@ -114,7 +114,10 @@ function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative h-[70vh] md:h-[91vh] overflow-hidden">
+    <section
+      className="relative h-[70vh] md:h-[91vh] overflow-hidden"
+      id="dashboard"
+    >
       {/* background images */}
       {slides.map((s, i) => (
         <motion.img
@@ -367,7 +370,10 @@ function FeaturesSection() {
 
 function AboutSection() {
   return (
-    <section className="px-6 py-24 bg-neutral-50 dark:bg-slate-900 relative overflow-hidden">
+    <section
+      className="px-6 py-24 bg-neutral-50 dark:bg-slate-900 relative overflow-hidden"
+      id="about"
+    >
       <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl" />
 
@@ -479,7 +485,10 @@ function PricingSection() {
   ];
 
   return (
-    <section className="px-6 py-24 bg-linear-to-b from-white to-blue-50 dark:from-neutral-950 dark:to-slate-900 relative overflow-hidden">
+    <section
+      className="px-6 py-24 bg-linear-to-b from-white to-blue-50 dark:from-neutral-950 dark:to-slate-900 relative overflow-hidden"
+      id="pricing"
+    >
       {/* Background Blobs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/20 dark:bg-blue-700/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/20 dark:bg-purple-700/20 rounded-full blur-3xl" />
@@ -751,7 +760,7 @@ function FAQSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="px-6 py-20 bg-white dark:bg-neutral-900">
+    <section className="px-6 py-20 bg-white dark:bg-neutral-900" id="faq">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-10">FAQ</h2>
 
@@ -854,7 +863,7 @@ function CTASection() {
                 <Button
                   variant="outline"
                   className="border-white text-white hover:bg-white/20"
-                  onClick={() => (location.href = "/?page=dashboard")}
+                  onClick={() => (location.href = "/dashboard")}
                 >
                   Ke Dashboard
                 </Button>
